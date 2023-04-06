@@ -1,6 +1,6 @@
 package TicketManager;
 
-public class Ticket  {
+public class Ticket implements Comparable<Ticket> {
     private int id;
     private String from;
     private String to;
@@ -8,11 +8,11 @@ public class Ticket  {
     private int duration;
 
     public Ticket(int id, String from, String to, int price, int duration) {
-        this id = id;
-        this from = from;
-        this to = to;
-        this price = price;
-        this duration = duration;
+        this.id = id;
+        this.from = from;
+        this.to = to;
+        this.price = price;
+        this.duration = duration;
     }
 
     public int getId() {
@@ -36,5 +36,14 @@ public class Ticket  {
     }
 
 
-
+    @Override
+    public int compareTo(Ticket o) {
+        if (price < o.getPrice()) {
+            return -1;
+        }
+        if (price > o.getPrice()) {
+            return 1;
+        }
+        return 0;
+    }
 }
