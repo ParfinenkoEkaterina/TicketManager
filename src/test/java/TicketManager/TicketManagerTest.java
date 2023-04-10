@@ -182,5 +182,4 @@ public class TicketManagerTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
-
 }
